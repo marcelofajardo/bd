@@ -1,0 +1,1 @@
+SELECT dni, nombre, apellido, tipo_dni_id_tp, descripcion  FROM personas inner join  tipo_dni on tipo_dni_id_tp=codigo
