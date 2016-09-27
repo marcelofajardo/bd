@@ -1,7 +1,7 @@
 <?php
 	require 'conexion.php';
 	
-	$sql = "SELECT dni, nombre, apellido, tipo_dni_id_tp, descripcion  FROM personas left join  tipo_dni on tipo_dni_id_tp=codigo";
+	$sql = "SELECT p.dni, p.nombre, p.apellido, p.tipo_dni_id_tp as td, t.descripcion as d  FROM personas p left join  tipo_dni t on tipo_dni_id_tp=codigo";
 	$result=$mysqli->query($sql);
 	
 ?>
@@ -40,7 +40,7 @@
 					<td><?php echo $row['dni']; ?></td>
 					<td><?php echo $row['apellido']; ?></td>
 					<td><?php echo $row['nombre']; ?></td>
-					<td><?php echo $row['descripcion']; ?></td>
+					<td><?php echo $row['d']; ?></td>
 					
 				</tr>
 				<?php } ?>
