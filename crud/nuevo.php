@@ -18,7 +18,7 @@
 				</tr>
 				<tr>
 					<td><b>Email</b></td>
-					<td><input type="text" name="email" size="25" /></td>
+					<td><input type="email" name="email" size="25" /></td>
 				</tr>
 				<tr>
 					<td colspan="2"><center><input type="submit" name="eviar" value="Registrar" /></center></td>
