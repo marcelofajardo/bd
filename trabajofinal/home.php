@@ -10,8 +10,11 @@ if(!isset($_SESSION["user_id"]) || $_SESSION["user_id"]==null){
 		<title>Agenda Motius</title>
 		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 	</head>
-	<body>
-	<?php include "php/navbar.php"; ?>
+<header>
+<?php include "php/navbar.php"; ?>	
+</header>
+<body>
+	
 <!--<div class="container">-->
 
 		
