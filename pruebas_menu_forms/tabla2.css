@@ -13,10 +13,10 @@ The th elements of the head will have the following style:*/
     padding:15px;
     color:#fff;
     text-shadow:1px 1px 1px #568F23;
-    border:1px solid #93CE37;
-    border-bottom:3px solid #9ED929;
-    background-color:#9DD929;
-    background:-webkit-gradient(
+    border:1px solid #FFB784;
+    border-bottom:3px solid #FFB784;
+    background-color:#C6885C;
+    /*background:-webkit-gradient(
         linear,
         left bottom,
         left top,
@@ -29,7 +29,7 @@ The th elements of the head will have the following style:*/
         rgb(123,192,67) 2%,
         rgb(139,198,66) 51%,
         rgb(158,217,41) 87%
-        );
+        );*/
     -webkit-border-top-left-radius:5px;
     -webkit-border-top-right-radius:5px;
     -moz-border-radius:5px 5px 0px 0px;
@@ -58,8 +58,8 @@ The inner table cells will have a light green background and a white text shadow
 .table1 tbody td{
     padding:10px;
     text-align:center;
-    background-color:#DEF3CA;
-    border: 2px solid #E7EFE0;
+    background-color:#F7DBC7;
+    border: 2px solid #FFB784;
     -moz-border-radius:2px;
     -webkit-border-radius:2px;
     border-radius:2px;

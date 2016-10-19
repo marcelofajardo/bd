@@ -20,7 +20,7 @@ nav {
     left:0;
     right:0;
 	margin:20px auto;
-	max-width:1000px;
+	max-width:90%;
 	width:90%;
 }
 
@@ -47,11 +47,11 @@ nav > ul > li:hover > ul {
 }
 
 nav > ul > li > ul {
-	display:block;
+	display:table-cell;
 	position:absolute;
 	background:#000;
-	left:0;
-	right:0;
+	left:10;
+	right:10;
 	overflow:hidden;
 	height:0%;
 	-webkit-transition: all .3s ease;
@@ -123,4 +123,44 @@ nav ul li a .citas {
 
 nav ul li a .salir {
 	background:#37a4d9;
+}
+
+body {
+ background-color: #FFDEC6;
+}
+#global {
+ width:90%; height:800px;
+ margin: 0 auto 0 auto;
+ /*background-color: #D8F5FF;*/
+}
+#cabecera {
+ width:800px;
+ margin: 0 auto 0 auto;
+ background-color: #B40068;
+}
+#navegacion {
+ width:780px;
+ margin: 0 auto 0 auto;
+ background-color: #B4CD00;
+}
+#principal {
+ width:650px;
+ margin: 0 auto 0 auto;
+ background-color: #ffCD68;
+ float: left;
+}
+.anuncios1 {
+ width:150px;
+ margin: 0 auto 0 auto;
+ background-color: #B4ff68;
+ float: right;
+}
+#pie {
+ width:800px;
+ margin: 0 auto 0 auto;
+ background-color: #B4C355;
+ float: left;
+}
+footer {
+ background-color: #6E6E6E;
 }
