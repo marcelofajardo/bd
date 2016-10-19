@@ -1,7 +1,7 @@
 <?php
 $server="localhost";	
-$user="u812363560_agen";
-$bd="u812363560_agen";
+$user="u569784351_agen";
+$bd="u569784351_agen";
 $clave="sistemas999";
 	
 $mysqli=new mysqli($server,$user,$clave,$bd);
