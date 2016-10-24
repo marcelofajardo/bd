@@ -1,13 +1,15 @@
 <?php 
 	
-	require('conexion.php');
+	require('../conexion.php');
 	
 	$id=$_POST['id'];
-	$usuario=$_POST['usuario'];
+	$nombre=$_POST['usuario'];
 	$password=$_POST['password'];
 	$email=$_POST['email'];
-	
-	$query="UPDATE usuarios SET usuario='$usuario', contrasenia='$password', email='$email' WHERE id='$id'";
+	$categoria=$_POST['categoria'];
+
+	$query="UPDATE usuario SET nombre='$nombre', clave='$password', email='$email', category_codigo='$categoria' 
+			WHERE id_usuario='$id'";
 	
 	$resultado=$mysqli->query($query);
 	
