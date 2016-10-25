@@ -1,7 +1,14 @@
 <?php
 	require('../conexion.php');
 	
+	if(isset($_POST['busqueda']) && $_POST['busqueda']<>''){
+		$nom=$_POST['busqueda'];
+	$query="SELECT id_usuario, nombre, email, category_codigo FROM usuario where nombre like '$nom%'";
+	//echo $query;
+	}
+	else{
 	$query="SELECT id_usuario, nombre, email, category_codigo FROM usuario";
+	} 
 	
 	$resultado=$mysqli->query($query);
 	
@@ -15,8 +22,17 @@
 	<body>
 		
 		<center><h1>Usuarios</h1></center>
-		
-		<input type="button" onclick=" location.href='nuevo.php' " value="Nuevo usuario" name="boton" />
+
+		<div style="float: left;">
+			<input type="button" onclick=" location.href='nuevo.php' " value="Nuevo usuario" name="boton" />
+		</div>
+		<div id="filtros" style="float: right;">
+			<form action="mostrar.php" method="post">
+			<p> Busqueda por nombre: 
+			<input type="text" name="busqueda">
+			<button type="submit">Filtrar</button></p>
+			</form>
+		</div>
 		<p></p>
 		<div class="group">
 		<table class="table1" border=1 width="100%" cellspacing=0>
