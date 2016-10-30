@@ -22,6 +22,7 @@ body {
  width:90%; height:400px;
  margin: 0 auto 0 auto;
  /*background-color: #D8F5FF;*/
+ background-color: rgb(0,0,255); opacity: 0.5;
 }
 #cabecera {
  width:800px;
@@ -58,6 +59,7 @@ footer {
 
 form.login {
     background: none repeat scroll 0 0 #F1F1F1;
+    opacity: 0.5;
     border: 1px solid #DDDDDD;
     font-family: sans-serif;
     margin: 0 auto;
