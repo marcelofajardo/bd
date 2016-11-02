@@ -1,7 +1,4 @@
-<?php 
-session_start(); 
-?> 
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -17,27 +14,21 @@ session_start();
 		<header>
 		<nav>
 			<ul>
-				<li onclick="mostrar()"><a href="inicio.php" target="contenido"><span class="inicio"><i class="icon icon-home"></i></span>Inicio</a></li>
+				<li onclick="mostrar()"><a href="../login/panel-control.php" target="contenido"><span class="inicio"><i class="icon icon-home"></i></span>Inicio</a></li>
 				<li id="users"><a href="../abm_usuario/mostrar.php" target="contenido"><span class="usuarios"><i class="icon icon-key"></i></span>ABM Usuarios</a>
 				</li>
 				<li id="Personas"><a href="../pruebas_menu_forms/tabla3.php" target="contenido"><span class="personas"><i class="icon icon-pacman"></i></span>ABM Personas</a></li>
 				<li id="Citas"><a href="#"><span class="citas"><i class="icon icon-pencil"></i></span>ABM Citas y Eventos</a>
 					<ul>
-						<li><a href="../abm_citas/Citas.php" target="contenido">Citas</a></li>
-						<li><a href="../abm_eventos/eventos.php" target="contenido">Eventos</a></li>
+						<li><a href="#">Citas</a></li>
+						<li><a href="#">Eventos</a></li>
 					</ul>
 
 				</li>
-				<li onclick="BotonSalir()"><a id="Salir" href="#" ><span class="salir"><i class="icon icon-rocket"></i></span>Logout</a></li>
+				<li><a id="Salir" href="../login/logout.php" target="contenido"><span class="salir"><i class="icon icon-rocket"></i></span>Logout</a></li>
 			</ul>
 		</nav>
 	</header>
-<!--<div>
-
-<?php
-	echo "Esta pagina es para " .$_SESSION['username'];
-?>-->
-</div>
 
 	<div id="global">
 		<iframe name="contenido" id="external" style="width:100%;height:100%;border: 0"><a href="../login/login.html"></iframe>
@@ -51,7 +42,7 @@ session_start();
 
 <script language="javascript"> 
 window.onload = function(){
-	//ocultar();
+	ocultar();
 	mostrar();
 } 
 </script> 
@@ -73,35 +64,24 @@ window.onload = function(){
 
 <script type="text/javascript">
 function mostrar(){
-	var silogin=false;
-	
-		var username='<?php echo $_SESSION['username']; ?>';
-		var categoria='<?php echo $_SESSION['categoria']; ?>';
-		var silogin='<?php echo $_SESSION['loggedin']; ?>';
-		if (silogin == true) {
-		if(categoria >10){
-		document.getElementById('users').style.display = 'none';
-		}
-		//document.getElementById('Salir').style.display = 'block';
-		//document.getElementById('Personas').style.display = 'block';
-		//document.getElementById('Citas').style.display = 'block';
+	session_start();
+	if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+		/*if($_SESSION['categoria'] <10){
+		document.getElementById('users').style.display = 'block';
+		}*/
+		document.getElementById('Salir').style.display = 'block';
+		document.getElementById('Personas').style.display = 'block';
+		document.getElementById('Citas').style.display = 'block';
 
-		}else{
-			window.location.href = "../login/logout.php";
-			ocultar();
 		}
 	}
 
 function ocultar(){
 document.getElementById('users').style.display = 'none';
-//document.getElementById('Salir').style.display = 'none';
+document.getElementById('Salir').style.display = 'none';
 document.getElementById('Personas').style.display = 'none';
 document.getElementById('Citas').style.display = 'none';
+}
 
-}
-function BotonSalir(){
-	//ocultar();
-	window.location.href = "../login/logout.php";
-}
 </script>
 </html>

@@ -11,7 +11,7 @@ if ($resultado->num_rows > 0) //si la variable tiene al menos 1 fila entonces se
     $combobit="";
     while ($row = $resultado->fetch_array(MYSQLI_ASSOC)) 
     {
-        $combobit .=" <option value='".$row['cod_pr']."'>".$row['tipo']."</option>"; //concatenamos el los options para luego ser insertado en el HTML
+        $combobit .=" <option value='".$row['id_pr']."'>".$row['tipo']."</option>"; //concatenamos el los options para luego ser insertado en el HTML
     }
 }
 else
@@ -50,7 +50,7 @@ $mysqli->close(); //cerramos la conexión
 					<td><input type="text" name="hora_fin" size="25" /></td>
 					<tr>
 					<td><b>Prioridad</b></td>
-					<td><select name="prioridad_cod_pr" >
+					<td><select name="prioridad_id_pr" >
        					<?php echo $combobit; ?>
    					</select> 
 

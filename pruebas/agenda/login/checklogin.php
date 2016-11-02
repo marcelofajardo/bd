@@ -28,7 +28,6 @@ if ($result->num_rows > 0) {
     $_SESSION['loggedin'] = true;
     $_SESSION['username'] = $username;
     $_SESSION['categoria'] = $row['category_codigo'];
-    $_SESSION['id_usuario']=$row['id_usuario'];
     $_SESSION['start'] = time();
     $_SESSION['expire'] = $_SESSION['start'] + (5 * 60);
     //$_SESSION['expire'] = $_SESSION['start'] + (1 * 20);

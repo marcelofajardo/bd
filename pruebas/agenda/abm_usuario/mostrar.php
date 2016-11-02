@@ -16,7 +16,7 @@
 	$query="SELECT id_usuario, u.nombre as nombre, email, c.nombre as categoria FROM usuario u, category c
 			WHERE c.codigo = u.category_codigo";
 	} 
-	echo $query;
+	
 	$resultado=$mysqli->query($query);
 
 ?>

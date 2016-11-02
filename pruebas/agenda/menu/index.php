@@ -24,7 +24,7 @@ session_start();
 				<li id="Citas"><a href="#"><span class="citas"><i class="icon icon-pencil"></i></span>ABM Citas y Eventos</a>
 					<ul>
 						<li><a href="../abm_citas/Citas.php" target="contenido">Citas</a></li>
-						<li><a href="../abm_eventos/eventos.php" target="contenido">Eventos</a></li>
+						<li><a href="#">Eventos</a></li>
 					</ul>
 
 				</li>
