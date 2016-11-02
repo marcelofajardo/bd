@@ -1,4 +1,0 @@
-AuthType Basic
-AuthUserFile /home/karl/hosting/web/www.monket.net/basic-auth-passwords
-Require valid-user
-AuthName "Karl O'Keeffe's Wesbite"

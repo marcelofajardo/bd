@@ -1,8 +1,0 @@
-CREATE TABLE `personas` (
-  `id` int(8) NOT NULL auto_increment,
-  `nombre` varchar(180) default NULL,
-  `telefono` int(10) default NULL,
-  `direccion` varchar(180) default NULL,
-  `foto` varchar(280) default NULL,
-  PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=0;
