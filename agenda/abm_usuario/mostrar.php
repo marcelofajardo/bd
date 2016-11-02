@@ -1,6 +1,7 @@
 <?php
+	include ('../login/control.php');
 	require('../conexion.php');
-	
+
 	if((isset($_POST['busqueda']) && $_POST['busqueda']<>'')or(isset($_POST['busquedaXcategoria']) && $_POST['busquedaXcategoria']<>'')){
 		$nom=$_POST['busqueda'];
 		$cat=$_POST['busquedaXcategoria'];
@@ -17,7 +18,7 @@
 	} 
 	
 	$resultado=$mysqli->query($query);
-	
+
 ?>
 
 <html>

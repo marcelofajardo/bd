@@ -50,8 +50,8 @@ nav > ul > li > ul {
 	display:table-cell;
 	position:absolute;
 	background:#000;
-	left:10;
-	right:10;
+	left:auto;
+	right:auto;
 	overflow:hidden;
 	height:0%;
 	-webkit-transition: all .3s ease;
@@ -149,13 +149,15 @@ body {
  background-color: #ffCD68;
  float: left;
 }
-.anuncios1 {
- width:150px;
- margin: 0 auto 0 auto;
- background-color: #B4ff68;
- float: right;
+.presentacion{
+border-radius: 25px;
+    border: 2px solid #73AD21;
+    padding: 20px; 
+    width: 400px;
+    margin: 0 auto;
+    /*height: 150px; */
 }
-#pie {
+#pie{
  width:800px;
  margin: 0 auto 0 auto;
  background-color: #B4C355;

@@ -30,6 +30,7 @@ if ($result->num_rows > 0) {
     $_SESSION['categoria'] = $row['category_codigo'];
     $_SESSION['start'] = time();
     $_SESSION['expire'] = $_SESSION['start'] + (5 * 60);
+    //$_SESSION['expire'] = $_SESSION['start'] + (1 * 20);
 
     echo "Bienvenido! " . $_SESSION['username'];
     //echo "<br><br><a href=control.php>Panel de Control</a>";

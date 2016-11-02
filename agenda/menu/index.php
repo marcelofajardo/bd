@@ -17,13 +17,13 @@ session_start();
 		<header>
 		<nav>
 			<ul>
-				<li onclick="mostrar()"><a href="../login/control.php" target="contenido"><span class="inicio"><i class="icon icon-home"></i></span>Inicio</a></li>
+				<li onclick="mostrar()"><a href="inicio.php" target="contenido"><span class="inicio"><i class="icon icon-home"></i></span>Inicio</a></li>
 				<li id="users"><a href="../abm_usuario/mostrar.php" target="contenido"><span class="usuarios"><i class="icon icon-key"></i></span>ABM Usuarios</a>
 				</li>
 				<li id="Personas"><a href="../pruebas_menu_forms/tabla3.php" target="contenido"><span class="personas"><i class="icon icon-pacman"></i></span>ABM Personas</a></li>
 				<li id="Citas"><a href="#"><span class="citas"><i class="icon icon-pencil"></i></span>ABM Citas y Eventos</a>
 					<ul>
-						<li><a href="#">Citas</a></li>
+						<li><a href="../abm_citas/Citas.php" target="contenido">Citas</a></li>
 						<li><a href="#">Eventos</a></li>
 					</ul>
 
