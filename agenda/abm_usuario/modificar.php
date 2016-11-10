@@ -1,7 +1,10 @@
 <?php
 	
 	require('../conexion.php');
-	
+	session_start();
+	$categoria=$_SESSION['categoria'];
+	$username=$_SESSION['username'];
+
 	$id=$_GET['id'];
 	
 	$query="SELECT nombre, clave, email, category_codigo FROM usuario WHERE id_usuario='$id'";
@@ -26,7 +29,16 @@
 				<tr>
 					<input type="hidden" name="id" value="<?php echo $id; ?>">
 					<td width="20"><b>Nombre Usuario:</b></td>
-					<td width="30"><input type="text" name="usuario" size="25" value="<?php echo $row['nombre']; ?>" /></td>
+					<td width="30">
+					<?php if ( $row['nombre'] == $username ){ ?>
+
+						<input type="text" name="usuario" size="25" value="<?php echo $row['nombre']; ?>" disabled />
+			
+					<?php }else { ?>
+
+						<input type="text" name="usuario" size="25" value="<?php echo $row['nombre']; ?>" />
+
+					<?php } ?></td>
 				</tr>	
 				<tr>
 					<td><b>Password:</b></td>

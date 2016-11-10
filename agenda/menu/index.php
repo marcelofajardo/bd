@@ -20,11 +20,11 @@ session_start();
 				<li onclick="mostrar()"><a href="inicio.php" target="contenido"><span class="inicio"><i class="icon icon-home"></i></span>Inicio</a></li>
 				<li id="users"><a href="../abm_usuario/mostrar.php" target="contenido"><span class="usuarios"><i class="icon icon-key"></i></span>ABM Usuarios</a>
 				</li>
-				<li id="Personas"><a href="../pruebas_menu_forms/tabla3.php" target="contenido"><span class="personas"><i class="icon icon-pacman"></i></span>ABM Personas</a></li>
-				<li id="Citas"><a href="#"><span class="citas"><i class="icon icon-pencil"></i></span>ABM Citas y Eventos</a>
+				<li id="Personas"><a href="../abm_personas/personas.php" target="contenido"><span class="personas"><i class="icon icon-pacman"></i></span>ABM Personas</a></li>
+				<li id="Citas"><a href="#"><span class="citas"><i class="icon icon-pencil"></i></span>ABM Citas y Notas</a>
 					<ul>
 						<li><a href="../abm_citas/Citas.php" target="contenido">Citas</a></li>
-						<li><a href="../abm_eventos/eventos.php" target="contenido">Eventos</a></li>
+						<li><a href="../abm_notas/notas.php" target="contenido">Notas</a></li>
 					</ul>
 
 				</li>
@@ -35,17 +35,15 @@ session_start();
 <!--<div>
 
 <?php
-	echo "Esta pagina es para " .$_SESSION['username'];
-?>-->
-</div>
+	//echo "Esta pagina es para " .$_SESSION['username'];
+?>
+</div>-->
 
 	<div id="global">
-		<iframe name="contenido" id="external" style="width:100%;height:100%;border: 0"><a href="../login/login.html"></iframe>
+		<iframe name="contenido" id="external" style="width:100%;height:100%;border: 0;margin: auto;padding: 0px auto;" src="inicio.php"></iframe>
 	</div>
 
-<div id ="pie">
-		
-</div>
+
 </body>
 
 

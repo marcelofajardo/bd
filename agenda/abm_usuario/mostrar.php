@@ -1,7 +1,10 @@
 <?php
 	include ('../login/control.php');
 	require('../conexion.php');
-
+	session_start();
+	$categoria=$_SESSION['categoria'];
+	$username=$_SESSION['username'];
+	
 	if((isset($_POST['busqueda']) && $_POST['busqueda']<>'')or(isset($_POST['busquedaXcategoria']) && $_POST['busquedaXcategoria']<>'')){
 		$nom=$_POST['busqueda'];
 		$cat=$_POST['busquedaXcategoria'];
@@ -68,7 +71,14 @@
 								<input type="button" onclick=" location.href='modificar.php?id=<?php echo $row['id_usuario'];?>' " value="Modificar" name="botonM" />
 							</td>
 							<td>
-								<input type="button" onclick=" location.href='pre_eliminar.php?id=<?php echo $row['id_usuario'];?>' " value="Eliminar" name="botonE" />
+								
+								<?php if ( $row['nombre'] != $username ){ ?>
+
+										 	<input type="button" onclick=" location.href='pre_eliminar.php?id=<?php echo $row['id_usuario'];?>' " value="Eliminar" name="botonE" />
+
+												
+								<?php } ?>
+							
 							</td>
 						</tr>
 					<?php } ?>

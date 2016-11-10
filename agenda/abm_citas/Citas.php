@@ -1,5 +1,6 @@
 <?php
 	
+	include ('../login/control.php');
 	require('../conexion.php');
 session_start();
 	$categoria=$_SESSION['categoria'];
@@ -16,62 +17,21 @@ session_start();
 		$personas=$_POST['personas'];
 
 
-$query="select * from (SELECT u.nombre as nusuario, c.contenido, c.fecha_ini, c.publico, c.hora_ini, c.hora_fin, p.tipo as ptipo, per.nombre as npersona FROM citas c, usuario u, prioridad p, personas per 
+$query="select * from (
 
-WHERE c.usuario_id_usuario = u.id_usuario AND c.prioridad_cod_pr = p.cod_pr AND c.personas_dni = per.dni
-and ( u.category_codigo >= 9 and publico = 1)and (u.nombre like '$nom%' or fecha_ini like '$fecha%')) t
-
-
-WHERE (contenido like '$conte%' and (hora_ini like '$horaini%' or hora_fin like '$horafin%') and t.ptipo like '$tipo%' and t.npersona like '$personas%' )  
+SELECT id_citas, u.nombre as nusuario, c.contenido, c.fecha_ini, c.publico, c.hora_ini, c.hora_fin, p.tipo as ptipo, per.nombre as npersona FROM citas c, usuario u, prioridad p, personas per, p_dp WHERE c.usuario_id_usuario = u.id_usuario AND c.prioridad_cod_pr = p.cod_pr AND c.personas_pdp_id = p_dp.p_dp_id and p_dp.personas_dni=per.dni and( u.category_codigo >= 9 and publico = 1)
 
 UNION
 
-SELECT u.nombre as nusuario, c.contenido, c.fecha_ini, c.publico, c.hora_ini, c.hora_fin, p.tipo as ptipo, per.nombre as npersona FROM citas c, usuario u, prioridad p, personas per 
+SELECT id_citas, u.nombre as nusuario, c.contenido, c.fecha_ini, c.publico, c.hora_ini, c.hora_fin, p.tipo as ptipo, per.nombre as npersona FROM citas c, usuario u, prioridad p, personas per, p_dp WHERE c.usuario_id_usuario = u.id_usuario AND c.prioridad_cod_pr = p.cod_pr AND c.personas_pdp_id = p_dp.p_dp_id and p_dp.personas_dni=per.dni
 
-WHERE c.usuario_id_usuario = u.id_usuario AND c.prioridad_cod_pr = p.cod_pr AND c.personas_dni = per.dni
+and ( u.nombre = '$username' ) ) tabla1
 
-and ( u.nombre = '$username'  and publico like '$public%') 
-
+WHERE (contenido like '%$conte%' and (hora_ini like '$horaini%' or hora_fin like '$horafin%') and tabla1.ptipo like '$tipo%' and tabla1.npersona like '$personas%'  and publico like '$public%' and (tabla1.nusuario like '$nom%' or fecha_ini like '$fecha%')) 
 
 order by fecha_ini asc ";
 
 
-
-
-
-	$primera_parte="SELECT u.nombre as nusuario, c.contenido, c.fecha_ini, c.publico, c.hora_ini, c.hora_fin, p.tipo, per.nombre as npersona
-					FROM citas c, usuario u, prioridad p, personas per
-					WHERE c.usuario_id_usuario = u.id_usuario
-					AND c.prioridad_cod_pr = p.cod_pr
-					AND c.personas_dni = per.dni ";
-
-/*
-	if((isset($_POST['busqueda']) && $_POST['busqueda']<>'') or (isset($_POST['busquedaxpubl']) && $_POST['busquedaxpubl']<>'') or (isset($_POST['contenido']) && $_POST['contenido']<>'') or (isset($_POST['hora']) && $_POST['hora']<>'')or (isset($_POST['tipo']) && $_POST['tipo']<>'')or (isset($_POST['personas']) && $_POST['personas']<>'')){
-		
-		$nom=$_POST['busqueda'];
-		$conte=$_POST['contenido'];
-		$fecha=$_POST['busqueda'];
-		$horaini=$_POST['hora'];
-		$horafin=$_POST['hora'];
-		$tipo=$_POST['tipo'];
-		$public=$_POST['busquedaxpubl'];
-		$personas=$_POST['personas'];
-		
-
-		$vfiltro=" ((u.nombre like '$nom%' or fecha_ini like '$fecha%') and contenido like '$conte%' and publico like '$public%' and (hora_ini like  '$horaini%' or hora_fin like '$horafin%')  and p.tipo like '$tipo%' and per.nombre like '$personas%' ) and  ";
-
-
-	$query="$primera_parte  and $vfiltro u.category_codigo >= $categoria order by fecha_ini asc";
-	
-	//$query="SELECT nombre, contenido,fecha_ini, publico, hora_ini, hora_fin,p.tipo  FROM citas c, usuario u , prioridad p, personas per where c.usuario_id_usuario=u.id_usuario and c.prioridad_id_pr=p.id_pr and  ((nombre like '$nom%' or fecha_ini like '$fecha%') and contenido like '$conte%' and publico like '$public%' and (hora_ini like  '$horaini%' or hora_fin like '$horafin%')  and p.tipo like '$tipo%'  ) and  u.category_codigo >= $categoria order by fecha_ini asc";
-	
-	}
-	
-	else{
-
-	$query="$primera_parte and u.category_codigo >= $categoria order by fecha_ini asc" ;
-	//$query="SELECT nombre, contenido,fecha_ini, hora_ini, hora_fin, p.tipo ,publico FROM citas c, usuario u , prioridad p, personas per where c.usuario_id_usuario=u.id_usuario and c.prioridad_id_pr=p.id_pr and u.category_codigo >= $categoria order by fecha_ini asc" ;
-	}*/ 
 	echo $query ;//. "    ,    " . $username;
 	$resultado=$mysqli->query($query);
 	?>
@@ -96,12 +56,12 @@ order by fecha_ini asc ";
 <div id="filtros" style="float: right;">
 			<form action="Citas.php" method="post">
 			<p> Busqueda: 
-			<input type="text" size="15" placeholder="nombre, fecha" name="busqueda">
-			<input type="text" size="20" placeholder="publico = 1, privada = 0" name="busquedaxpubl">
-			<input type="text" size="15" placeholder="contenido" name="contenido"> 
-			<input type="text" size="8" placeholder="hora" name="hora">
-			<input type="text" size="8" placeholder="urgencia" name="tipo">
-			<input type="text" size="15" placeholder="personas" name="personas">
+			<input type="text" size="15" placeholder="Creador, Fecha" name="busqueda">
+			<input type="text" size="20" placeholder="Publico = 1, Privada = 0" name="busquedaxpubl">
+			<input type="text" size="15" placeholder="Contenido" name="contenido"> 
+			<input type="text" size="8" placeholder="Hora" name="hora">
+			<input type="text" size="8" placeholder="Urgencia" name="tipo">
+			<input type="text" size="15" placeholder="Persona" name="personas">
 			<button type="submit">Filtrar</button></p>
 			</form>
 		</div>	
@@ -153,13 +113,20 @@ order by fecha_ini asc ";
 								<?php echo $row['npersona'];?>
 							</td>
 							<td>
+									<?php if ( $row['nusuario'] == $username ){ ?>
 
-						
-								<input type="button" onclick=" location.href='modificar_cita.php?id=<?php echo $row['usuario_id_usuario'];?>' " value="Modificar" name="botonM" />
-								
+										 	<input type="button" onclick=" location.href='modificar_cita.php?id=<?php echo $row['id_citas'];?>' " value="Modificar" name="botonM" />									
+									<?php } ?>
 							</td>
 							<td>
-								<input type="button" onclick=" location.href='pre_eliminar.php?id=<?php echo $row['usuario_id_usuario'];?>' " value="Eliminar" name="botonE" />
+							<?php if ( $row['nusuario'] == $username ){ ?>
+
+										 	<input type="button" onclick=" location.href='pre_eliminar_cita.php?id=<?php echo $row['id_citas'];?>' " value="Eliminar" name="botonE" />
+
+												
+									<?php } ?>
+							
+								
 							</td>
 						</tr>
 					<?php } ?>

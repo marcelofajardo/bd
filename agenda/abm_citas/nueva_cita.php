@@ -53,17 +53,20 @@ $mysqli->close(); //cerramos la conexión
 					<td><select name="prioridad_cod_pr" >
        					<?php echo $combobit; ?>
    					</select> 
-
-   					
-
    					</td>
 
 				</tr>
 				<td><b>Publica (0 para no,1 para si</b></td>
 					<td><input type="text" name="publico" size="25" /></td>
 				</tr>
-					<!--<td><input type="text" name="categoria" size="5" /></td>-->
-					
+										
+					<!--<tr><td> 
+
+								<input type="text" name="dni" size="25" />
+
+
+					</td></tr> -->
+
 				
 				<tr>
 					<td colspan="2"><center><input type="submit" name="enviar" value="Registrar" /></center></td>

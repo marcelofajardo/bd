@@ -17,6 +17,7 @@
 	
 	$resultado=$mysqli->query($query);
 	
+	
 ?>
 
 <html>
