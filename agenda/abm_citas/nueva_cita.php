@@ -39,7 +39,7 @@ $mysqli->close(); //cerramos la conexión
 				</tr>
 				<tr>
 					<td><b>Dia</b></td>
-					<td><input type="text" name="fecha_ini" size="25" /></td>
+					<td><input type="date" name="fecha_ini" size="25" /></td>
 				</tr>
 				<tr>
 					<td><b>Hora Inicio</b></td>
@@ -57,7 +57,12 @@ $mysqli->close(); //cerramos la conexión
 
 				</tr>
 				<td><b>Publica (0 para no,1 para si</b></td>
-					<td><input type="text" name="publico" size="25" /></td>
+					<td>
+					<select name="publico" id="publico">
+					<option value="1">Publica</option>
+					<option value="2">Privada</option>
+					</select>
+					</td>
 				</tr>
 										
 					<!--<tr><td> 

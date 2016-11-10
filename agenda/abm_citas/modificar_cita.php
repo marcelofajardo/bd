@@ -8,8 +8,12 @@
 	$id=$_GET['id'];
 
 	
-	$query="SELECT id_citas, contenido, fecha_ini,publico, hora_ini, hora_fin, prioridad_cod_pr, pe.nombre as nombre1 FROM citas c, usuario u , prioridad p , personas pe where c.usuario_id_usuario=u.id_usuario and c.prioridad_cod_pr=p.cod_pr and c.personas_dni= pe.dni and id_citas= '$id' order by fecha_ini asc" ;
-	
+	$query="SELECT id_citas, contenido, fecha_ini,publico, hora_ini, hora_fin, prioridad_cod_pr, pe.nombre as nombre1 
+	FROM citas c, usuario u , prioridad p , personas pe, p_dp 
+	where c.usuario_id_usuario=u.id_usuario and c.prioridad_cod_pr=p.cod_pr  and c.personas_pdp_id=p_dp.p_dp_id 
+	and pe.dni=p_dp.personas_dni 
+ 	and id_citas= '$id' order by fecha_ini asc ";
+
 	$resultado=$mysqli->query($query);
 	
 	$row=$resultado->fetch_assoc();
@@ -28,7 +32,8 @@ if ($resultado2->num_rows > 0) //si la variable tiene al menos 1 fila entonces s
 }
 	
 
-echo $row['contenido']."      ".$row['nombre1'];	
+echo $row['contenido']."      ".$row['nombre1']."<br>";	
+echo $query;
 ?>
 
 
