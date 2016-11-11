@@ -51,7 +51,7 @@ order by fecha_ini asc ";
 		<center><h1>Citas</h1></center>
 
 <div style="float: left;">
-			<input type="button" onclick=" location.href='nueva_cita.php'" value="Nueva Cita" name="boton" />
+			<input type="button" onclick=" location.href='../abm_personas/personas.php'" value="Nueva Cita" name="boton" />
 		</div>
 <div id="filtros" style="float: right;">
 			<form action="Citas.php" method="post">
@@ -115,7 +115,7 @@ order by fecha_ini asc ";
 							<td>
 									<?php if ( $row['nusuario'] == $username ){ ?>
 
-										 	<input type="button" onclick=" location.href='modificar_cita.php?id=<?php echo $row['id_citas'];?>' " value="Modificar" name="botonM" />									
+										 	<input type="button" onclick=" location.href='modificar_cita.php?id=<?php echo $row['id_citas'];$_SESSION['dedonde']='citas';?>' " value="Modificar" name="botonM" />									
 									<?php } ?>
 							</td>
 							<td>

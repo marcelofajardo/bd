@@ -61,7 +61,7 @@
 					<?php while($row=$resultado->fetch_assoc()){ ?>
 
 						<tr>
-							<td><?php echo $row['nombre'];?>
+							<td><a href="../abm_citas/nueva_cita.php?id=<?php echo $row['dni'];?>"><?php echo $row['nombre'];$_SESSION['dedonde']='personas'; ?>
 							</td>
 							<td>
 								<?php echo $row['apellido'];?>

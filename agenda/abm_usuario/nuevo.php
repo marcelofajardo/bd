@@ -40,7 +40,7 @@ $mysqli->close(); //cerramos la conexión
 				</tr>
 				<tr>
 					<td><b>Email</b></td>
-					<td><input type="text" name="email" size="25" /></td>
+					<td><input type="email" name="email" size="25" /></td>
 				</tr>
 				<tr>
 					<td><b>Categoria</b></td>
