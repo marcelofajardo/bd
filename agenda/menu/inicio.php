@@ -16,6 +16,10 @@ include ('../login/control.php');
 
 </div>-->
 <img id="mostrar_img" src="imagenes/tux-graduate.png" alt="TuxGraduate" width="400" onclick="cambiar()"></img>
+
+<br><br>
+<center><input type="button" onclick=" location.href='charts.php' " value="Regresar" name="boton" /></center>
+
 </body>
 
 <script>
