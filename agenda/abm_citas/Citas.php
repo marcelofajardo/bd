@@ -29,7 +29,7 @@ and ( u.nombre = '$username' ) ) tabla1
 
 WHERE (contenido like '%$conte%' and (hora_ini like '$horaini%' or hora_fin like '$horafin%') and tabla1.ptipo like '$tipo%' and tabla1.npersona like '$personas%'  and publico like '$public%' and (tabla1.nusuario like '$nom%' or fecha_ini like '$fecha%')) 
 
-order by fecha_ini asc ";
+order by  publico , fecha_ini asc ";
 
 
 	echo $query ;//. "    ,    " . $username;

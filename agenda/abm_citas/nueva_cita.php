@@ -1,6 +1,7 @@
-<?php
+	<?php
 require('../conexion.php');
 	session_start();
+	
 	$id_usuario=$_SESSION['id_usuario'];       
 	$categoria=$_SESSION['categoria'];
 	$dedonde=$_SESSION['dedonde'];
@@ -18,7 +19,9 @@ if ($resultado->num_rows > 0) //si la variable tiene al menos 1 fila entonces se
 else
 {
     echo "No hubo resultados";
+
 }
+
 $mysqli->close(); //cerramos la conexión
 echo $_GET['id']."  ,  ".$dedonde ;
 ?>
@@ -61,11 +64,11 @@ echo $_GET['id']."  ,  ".$dedonde ;
    					</td>
 
 				</tr>
-				<td><b>Publica (0 para no,1 para si</b></td>
+				<td><b>Publica (2 para no,1 para si</b></td>
 					<td>
 					<select name="publico" id="publico">
 					<option value="1">Publica</option>
-					<option value="2">Privada</option>
+					<option value="0">Privada</option>
 					</select>
 					</td>
 				</tr>
@@ -77,7 +80,9 @@ echo $_GET['id']."  ,  ".$dedonde ;
 
 					</td></tr> -->
 
+ 				<input type="hidden" name="id" value= "<?php echo  $_GET['id']; ?>">	<!--	lo logre ja-->		
 				
+
 				<tr>
 					<td colspan="2"><center><input type="submit" name="enviar" value="Registrar" /></center></td>
 				</tr>

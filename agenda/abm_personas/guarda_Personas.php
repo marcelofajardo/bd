@@ -2,16 +2,18 @@
 	
 	require('../conexion.php');
 	
-	$dni=$_POST['dni'];
+	$dni1=$_POST['dniprueba'];
+	//$dniprueba=$_POST['dniprueba'];
 	$nombre=$_POST['nombre'];
 	$apellido=$_POST['apellido'];
-	$tips=$_POST['codigo'];
+	$codigo=$_POST['codigo'];
 
 
-	$query="INSERT INTO `personas`(`dni`, `nombre`, `apellido`, `tipo_dni_id_tp`) VALUES ('$dni','$nombre','$apellido','$tips')";
+	$query="INSERT INTO personas (dni, nombre, apellido, tipo_dni_codigo) VALUES ($dni1,'$nombre','$apellido',$codigo)";
 	
 	$resultado=$mysqli->query($query);
-	
+	echo $query;
+	//echo "  ,  " . $dniprueba;
 ?>
 
 <html>
@@ -29,7 +31,7 @@
 			
 			<p></p>	
 			
-			<input type="button" onclick=" location.href='Personas.php' " value="Regresar" name="boton" />
+			<input type="button" onclick="location.href='nuevo_per.php?dni=<?php echo  $dni1; ?>'" value="Regresar" name="botonREGr" />
 			
 		</center>
 	</body>

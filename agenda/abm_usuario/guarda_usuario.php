@@ -23,8 +23,10 @@
 		<center>	
 			
 			<?php if($resultado>0){ ?>
-				<h1>Usuario Guardado</h1>
-				<?php }else{ ?>
+				<h1>Usuario Guardado - </h1>
+				<?php
+				//echo $mysqli->insert_id;
+				}else{ ?>
 				<h1>Error al Guardar Usuario</h1>		
 			<?php	} ?>		
 			
