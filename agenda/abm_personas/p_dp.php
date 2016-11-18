@@ -14,7 +14,7 @@
 	//$query="SELECT p_dp_id, p.nombre as nusuario, apellido, dni, telefono1, dp.email as pemail FROM p_dp pd, personas p, datos_personales dp, usuario u WHERE pd.usuario_id_usuario= u.id_usuario and pd.personas_dni=p.dni and pd.datos_personales_id_dp=dp.id_dp and u.category_codigo= $cat and p.nombre like '%$nomape%' and dni like '%$dni%'" ;
 
 
-	$query="SELECT p_dp_id, dp.id_dp, dp2.id_dp2, domicilio, telefono1, telefono2, telegram, dp.email as pemail , dp2.foto, dp2.empresa, dp2.contacto, dp2.cv FROM p_dp pd, personas p, datos_personales dp, datos_personales_2 dp2, usuario u WHERE pd.usuario_id_usuario = u.id_usuario AND pd.personas_dni = p.dni AND pd.datos_personales_id_dp = dp.id_dp AND pd.datos_personales_id_dp2 = dp2.id_dp2 AND u.category_codigo = $cat AND pd.personas_dni LIKE '%$dni%'";
+	$query="SELECT p_dp_id, dp.id_dp, dp2.id_dp2, domicilio, telefono1, telefono2, telegram, dp.email as pemail , dp2.foto, dp2.empresa, dp2.contacto, dp2.cv FROM p_dp pd, personas p, datos_personales dp, datos_personales_2 dp2, usuario u WHERE pd.usuario_id_usuario = u.id_usuario AND pd.personas_dni = p.dni AND pd.datos_personales_id_dp = dp.id_dp AND pd.datos_personales_id_dp2 = dp2.id_dp2 AND u.category_codigo = $cat AND pd.personas_dni = $dni";
 
 	$resultado2=$mysqli->query($query);
 	$row2=$resultado2->fetch_assoc();

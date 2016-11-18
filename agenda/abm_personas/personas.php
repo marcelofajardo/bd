@@ -45,8 +45,8 @@
 		<table class="table1" border=1 width="100%" cellspacing=0>
 			<thead>
 				<tr>
-					<th><b>NOMBRE</b></th>
 					<th><b>APELLIDO</b></th>
+					<th><b>NOMBRE</b></th>
 					<th><b>DNI</b></th>
 					<th><b>Telefono</b></th>
 					<th><b>Email</b></th>					
@@ -60,10 +60,10 @@
 					<?php while($row=$resultado->fetch_assoc()){ ?>
 
 						<tr>
-							<td><a href="../abm_citas/nueva_cita.php?id=<?php echo $row['p_dp_id'];?>"><?php echo $row['nusuario'];$_SESSION['dedonde']='personas'; ?></a>
+							<td><a href="../abm_citas/nueva_cita.php?id=<?php echo $row['p_dp_id'];?>"><?php echo $row['apellido'];$_SESSION['dedonde']='personas'; ?></a>
 							</td>
 							<td>
-								<?php echo $row['apellido'];?>
+								<?php echo $row['nusuario'];?>
 							</td>
 							<td>
 								<?php echo $row['dni'];?>

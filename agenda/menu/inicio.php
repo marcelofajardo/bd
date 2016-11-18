@@ -18,7 +18,9 @@ include ('../login/control.php');
 <img id="mostrar_img" src="imagenes/tux-graduate.png" alt="TuxGraduate" width="400" onclick="cambiar()"></img>
 
 <br><br>
-<center><input type="button" onclick=" location.href='charts.php' " value="Regresar" name="boton" /></center>
+<center><input type="button" onclick=" location.href='charts.php' " value="Ver estadisticas" name="boton" /></center>
+<br><br>
+<center><input type="button" onclick=" location.href='../reloj/index.html' " value="Reloj JavaScript" name="botonR" /></center>
 
 </body>
 

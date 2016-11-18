@@ -57,7 +57,7 @@ if($p_dp_id==''){
 
  					echo $id_dp_nuevo." - ".$id_dp2_nuevo;
 $sql_final="INSERT INTO p_dp (p_dp_id, datos_personales_id_dp, usuario_id_usuario, personas_dni, datos_personales_id_dp2) 
-			VALUES (NULL, '$id_dp_nuevo', '$id_usuario', '$dni', '$id_dp2_nuevo');";
+			VALUES (NULL, $id_dp_nuevo, $id_usuario, $dni, $id_dp2_nuevo);";
 
 $result_sql_final=$mysqli->query($sql_final);
 echo "<br>".$sql_final;
