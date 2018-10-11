@@ -1,9 +1,9 @@
 <?php
 //$server="localhost";
 $server="mysql.hostinger.com.ar";	
-$user="u569784351_agen";
-$bd="u569784351_agen";
-$clave="sistemas999";
+$user="u410159394_agen";
+$bd="u410159394_agen";
+$clave="sistemas";
 	
 $mysqli=new mysqli($server,$user,$clave,$bd);	
 	
